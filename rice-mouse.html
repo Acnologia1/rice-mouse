@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Rice(weight){
+        this.weight = weight;
+        this.getWeight = function(){
+            return this.weight;
+        }
+        this.setWeight = function(weight){
+            this.weight = weight;
+        }
+        this.decrease = function(){
+            this.weight--;
+        }
+        this.isEmpty = function(){
+            if(this.weight ==0)
+            {
+                document.write('Hết gạo');
+            }
+        }
+
+    }
+    function Mouse(weight){
+        this.weight =weight;
+        this.getWeight = function(){
+            return this.weight;
+        }
+        this.eatRice = function(){
+            this.weight++;
+        }
+    }
+    var rice = new Rice(30);
+    var mouse = new Mouse(10);
+    function an_gao() {
+        for (var i =rice.weight;i >0;i--)
+        {
+            rice.decrease();
+            mouse.eatRice();
+            document.write('Con chuot có' + mouse.weight+'Bao gạo còn'+rice.weight+'<br/>');
+            rice.isEmpty();
+
+        }
+
+    }
+            an_gao();
+</script>
+</body>
+</html>
